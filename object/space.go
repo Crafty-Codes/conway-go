@@ -1,5 +1,11 @@
 package object
 
+import "fmt"
+
+type plane interface {
+	Print()
+}
+
 type Space [][]Block
 
 func NewSpace(size int) [][]Block {
@@ -13,4 +19,13 @@ func NewSpace(size int) [][]Block {
 	}
 
 	return space
+}
+
+func Print(space Space) {
+	for _, r := range space {
+		for _, block := range r {
+			block.Print()
+		}
+		fmt.Println()
+	}
 }
