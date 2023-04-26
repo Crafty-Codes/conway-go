@@ -3,9 +3,10 @@ package logic
 import "github.com/Crafty-Codes/conway-go/internal/object"
 
 func Survival(space object.Space) object.Space {
-	newSpace := object.NewSpace(len(space))
+	newSpace := make([][]object.Block, len(space))
 
 	for r := range space {
+		newSpace[r] = make([]object.Block, len(space[r]))
 		for c := range space[r] {
 			life := getSurvivalCount(space, r, c)
 
@@ -13,6 +14,8 @@ func Survival(space object.Space) object.Space {
 				newSpace[r][c] = object.Block{Vitality: object.ALIVE}
 			} else if space[r][c].Vitality == object.ALIVE && life == 2 {
 				newSpace[r][c] = object.Block{Vitality: object.ALIVE}
+			} else {
+				newSpace[r][c] = object.Block{Vitality: object.DEAD}
 			}
 		}
 	}
@@ -26,7 +29,7 @@ func getSurvivalCount(space object.Space, row int, column int) uint8 {
 	for r := row - 1; r <= row+1; r++ {
 		for c := column - 1; c <= column+1; c++ {
 			if r != row || c != column {
-				if (r >= 0 && r < len(space)) && (c >= 0 && c < len(space)) {
+				if (r >= 0 && r < len(space)) && (c >= 0 && c < len(space[r])) {
 					if space[r][c].Vitality == object.ALIVE {
 						counter++
 					}

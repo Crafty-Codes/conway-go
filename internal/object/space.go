@@ -2,17 +2,13 @@ package object
 
 import "fmt"
 
-type plane interface {
-	Print()
-}
-
 type Space [][]Block
 
-func NewSpace(size int) [][]Block {
-	space := make([][]Block, size)
+func NewSpace(row int, column int) [][]Block {
+	space := make([][]Block, row)
 
 	for r := range space {
-		space[r] = make([]Block, size)
+		space[r] = make([]Block, column)
 		for c := range space[r] {
 			space[r][c] = Block{Vitality: DEAD}
 		}

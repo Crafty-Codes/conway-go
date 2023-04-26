@@ -6,14 +6,11 @@ import (
 
 	"github.com/Crafty-Codes/conway-go/internal/logic"
 	"github.com/Crafty-Codes/conway-go/internal/object"
+	"github.com/Crafty-Codes/conway-go/internal/reader"
 )
 
 func main() {
-	space := object.NewSpace(5)
-
-	space[2][1].Vitality = object.ALIVE
-	space[2][2].Vitality = object.ALIVE
-	space[2][3].Vitality = object.ALIVE
+	space := reader.ReadFile()
 
 	for {
 		object.Print(space)
