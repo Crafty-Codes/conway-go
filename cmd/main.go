@@ -1,10 +1,11 @@
 package main
 
 import (
-	"conway/go/logic"
-	"conway/go/object"
 	"fmt"
 	"time"
+
+	"github.com/Crafty-Codes/conway-go/internal/logic"
+	"github.com/Crafty-Codes/conway-go/internal/object"
 )
 
 func main() {

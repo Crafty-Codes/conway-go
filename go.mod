@@ -1,3 +1,3 @@
-module conway/go
+module github.com/Crafty-Codes/conway-go
 
-go 1.18
+go 1.20

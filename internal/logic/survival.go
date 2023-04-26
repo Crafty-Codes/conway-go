@@ -1,6 +1,6 @@
 package logic
 
-import "conway/go/object"
+import "github.com/Crafty-Codes/conway-go/internal/object"
 
 func Survival(space object.Space) object.Space {
 	newSpace := object.NewSpace(len(space))
