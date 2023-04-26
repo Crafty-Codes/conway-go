@@ -13,11 +13,11 @@ func main() {
 	space := reader.ReadFile()
 
 	for {
-		object.Print(space)
 		fmt.Println()
+		object.Print(space)
 
 		space = logic.Survival(space)
 
-		time.Sleep(1 * time.Second)
+		time.Sleep(500 * time.Millisecond)
 	}
 }
