@@ -18,10 +18,12 @@ func NewSpace(row int, column int) Space {
 }
 
 func Print(space Space) {
+	printString := ""
 	for _, r := range space {
 		for _, block := range r {
-			block.Print()
+			printString = printString + string(block.Vitality)
 		}
-		fmt.Println()
+		printString = printString + "\n"
 	}
+	fmt.Println(printString)
 }
