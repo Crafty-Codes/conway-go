@@ -3,7 +3,7 @@ package logic
 import "github.com/Crafty-Codes/conway-go/internal/object"
 
 func Survival(space object.Space) object.Space {
-	newSpace := make([][]object.Block, len(space))
+	newSpace := make(object.Space, len(space))
 
 	for r := range space {
 		newSpace[r] = make([]object.Block, len(space[r]))

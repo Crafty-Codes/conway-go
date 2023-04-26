@@ -4,8 +4,8 @@ import "fmt"
 
 type Space [][]Block
 
-func NewSpace(row int, column int) [][]Block {
-	space := make([][]Block, row)
+func NewSpace(row int, column int) Space {
+	space := make(Space, row)
 
 	for r := range space {
 		space[r] = make([]Block, column)
