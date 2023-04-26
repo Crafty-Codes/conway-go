@@ -10,6 +10,10 @@ import (
 func main() {
 	space := object.NewSpace(5)
 
+	space[2][1].Vitality = object.ALIVE
+	space[2][2].Vitality = object.ALIVE
+	space[2][3].Vitality = object.ALIVE
+
 	for true {
 		object.Print(space)
 		fmt.Println()
