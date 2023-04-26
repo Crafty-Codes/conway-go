@@ -27,8 +27,10 @@ func ReadFile() object.Space {
 		for i, v := range scanner.Text() {
 			if v == '0' {
 				row[i].Vitality = object.DEAD
-			} else {
+			} else if v == '1' {
 				row[i].Vitality = object.ALIVE
+			} else {
+				row[i].Vitality = object.WALL
 			}
 		}
 		scannedList = append(scannedList, row)

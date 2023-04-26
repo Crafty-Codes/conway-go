@@ -6,17 +6,14 @@ type Block struct {
 	Vitality Vital
 }
 
-type Vital int
+type Vital string
 
 const (
-	ALIVE Vital = 0
-	DEAD  Vital = 1
+	ALIVE Vital = "░"
+	DEAD  Vital = "█"
+	WALL  Vital = "▓"
 )
 
 func (block Block) Print() {
-	if block.Vitality == ALIVE {
-		fmt.Print("░")
-	} else {
-		fmt.Print("█")
-	}
+	fmt.Print(block.Vitality)
 }
