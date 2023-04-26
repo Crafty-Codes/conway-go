@@ -3,27 +3,26 @@ package main
 import (
 	"conway/go/object"
 	"fmt"
+	"time"
 )
 
 func main() {
 	space := object.NewSpace(5)
 
-	for i := 0; i < 5; i++ {
+	for true {
 		print(space)
 		fmt.Println()
 
 		space = survival(space)
+
+		time.Sleep(1 * time.Second)
 	}
 }
 
 func print(space object.Space) {
 	for r := range space {
 		for c := range space[r] {
-			if space[r][c].Vitality == object.DEAD {
-				fmt.Print("0")
-			} else {
-				fmt.Print("1")
-			}
+			space[r][c].Print()
 		}
 		fmt.Println()
 	}
