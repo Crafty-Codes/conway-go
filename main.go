@@ -14,7 +14,7 @@ func main() {
 	space[2][2].Vitality = object.ALIVE
 	space[2][3].Vitality = object.ALIVE
 
-	for true {
+	for {
 		object.Print(space)
 		fmt.Println()
 
